@@ -1,0 +1,29 @@
+日志
+
+2020-02-19 10:28:29.739    - Info  -    cmd:InitInstance date:
+2020-02-19 10:28:29.739    * Error *    xdu_get: XOpenDisplay :0 failed
+2020-02-19 10:28:29.739    * Error *    xdu_get: XOpenDisplay :0 failed
+2020-02-19 10:28:29.739    * Error *    get_all_monitor_info: Can't open display :0
+2020-02-19 10:28:29.739    * Error *    get monitor info failed
+————————————————
+版权声明：本文为CSDN博主「wzf20162016」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/wzf20162016/article/details/104389112
+
+一般是没有安装老版桌面lightdm
+首先 sudo apt install lightdm
+然后
+在/etc/profile.d/下面创建一个脚本xrk.sh
+
+sudo gedit /etc/profile.d/xrk.sh
+
+在里面输入
+
+#!/bin/bash
+
+xhost +
+
+保存退出
+
+然后
+
+chmod 777 xrk.sh 然后重启电脑 
